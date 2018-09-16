@@ -124,48 +124,22 @@ class ViewController: UIViewController {
     }, completion:
         nil
     )
-      
-    UIView.animate(withDuration: 0.5,
-                   delay: 0.5,
-                   options: [],
-                   animations: { [unowned self] in
-                        self.cloud1.alpha = 1.0
-        }, completion:
-        nil
-    )
-    
-    UIView.animate(withDuration: 0.5,
-                   delay: 0.7,
-                   options: [],
-                   animations: { [unowned self] in
-                        self.cloud2.alpha = 1.0
-        }, completion:
-        nil
-    )
-    
-    UIView.animate(withDuration: 0.5,
-                   delay: 0.9,
-                   options: [],
-                   animations: { [unowned self] in
-                        self.cloud3.alpha = 1.0
-        }, completion:
-        nil
-    )
-    
-    UIView.animate(withDuration: 0.5,
-                   delay: 1.1,
-                   options: [],
-                   animations: { [unowned self] in
-                        self.cloud4.alpha = 1.0
-        }, completion:
-        nil
-    )
-    
+          
     UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: { [unowned self] in
             self.loginButton.center.y -= 30
             self.loginButton.alpha = 1.0
     }, completion: nil)
+    
 
+    self.animateCloudsWithFade(cloud: self.cloud1, delay: 0.5)
+    self.animateCloudsWithFade(cloud: self.cloud2, delay: 0.7)
+    self.animateCloudsWithFade(cloud: self.cloud3, delay: 0.9)
+    self.animateCloudsWithFade(cloud: self.cloud4, delay: 1.1)
+
+    self.animateCloud(cloud: self.cloud1)
+    self.animateCloud(cloud: self.cloud2)
+    self.animateCloud(cloud: self.cloud3)
+    self.animateCloud(cloud: self.cloud4)
   }
 
   // MARK: further methods
@@ -251,5 +225,32 @@ class ViewController: UIViewController {
                         self.loginButton.bounds.size.width -= 80.0
                         self.loginButton.center.y -= 60.0
         }, completion: nil)
+    }
+    
+    func animateCloud(cloud: UIImageView) {
+        let cloudSpeed = 60.0/self.view.frame.size.width
+        let duration = (self.view.frame.size.width - cloud.frame.origin.x) * cloudSpeed
+        
+        UIView.animate(withDuration: TimeInterval(duration),
+                       delay: 0.0,
+                       options: [.curveLinear],
+                       animations: { [unowned self] in
+                        cloud.frame.origin.x = self.view.frame.size.width
+            }, completion: { [unowned self] _ in
+                cloud.frame.origin.x = -cloud.frame.size.width
+                self.animateCloud(cloud: cloud)
+        })
+    }
+    
+    func animateCloudsWithFade(cloud: UIImageView, delay: TimeInterval) {
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: delay,
+                       options: [],
+                       animations: { () in
+                            cloud.alpha = 1.0
+            }, completion:
+            nil
+        )
     }
 }
