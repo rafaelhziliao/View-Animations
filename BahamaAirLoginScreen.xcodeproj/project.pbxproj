@@ -14,7 +14,18 @@
 		9C4319731A0C32D90085829B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4319711A0C32D90085829B /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		58586514216D2FF1002A0A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58586510216D2FF1002A0A41 /* Flight Info.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C485D9E1A1CCBE1004A6132;
+			remoteInfo = "Flight Info";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		58586510216D2FF1002A0A41 /* Flight Info.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Flight Info.xcodeproj"; sourceTree = "<group>"; };
 		9C4319631A0C32D80085829B /* BahamaAirLoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BahamaAirLoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4319671A0C32D80085829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C4319681A0C32D80085829B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,9 +46,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58586511216D2FF1002A0A41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58586515216D2FF1002A0A41 /* Flight Info.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9C43195A1A0C32D80085829B = {
 			isa = PBXGroup;
 			children = (
+				58586510216D2FF1002A0A41 /* Flight Info.xcodeproj */,
 				9C4319651A0C32D80085829B /* BahamaAirLoginScreen */,
 				9C4319641A0C32D80085829B /* Products */,
 			);
@@ -119,12 +139,28 @@
 			mainGroup = 9C43195A1A0C32D80085829B;
 			productRefGroup = 9C4319641A0C32D80085829B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 58586511216D2FF1002A0A41 /* Products */;
+					ProjectRef = 58586510216D2FF1002A0A41 /* Flight Info.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9C4319621A0C32D80085829B /* BahamaAirLoginScreen */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		58586515216D2FF1002A0A41 /* Flight Info.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Flight Info.app";
+			remoteRef = 58586514216D2FF1002A0A41 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9C4319611A0C32D80085829B /* Resources */ = {
